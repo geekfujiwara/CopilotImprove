@@ -26,6 +26,11 @@ Copilot の実際の改善活動を行うチームは、環境ごとに配置さ
 > [!Note]
 > テナント全体ではCoE Starter Kit による管理を想定しており、環境はこちらのアプリ、テナントはCoE Starter Kit という分担で考えております。
 
+## 動画
+1分程度で実際の改善の流れを紹介してみました。
+
+https://github.com/geekfujiwara/CopilotImprove/assets/96101315/c02b9b4d-cd4f-434c-b596-ac056c78c7aa
+
 # Copilot 改善アプリの利用イメージ
 
 ## 各種レポート
