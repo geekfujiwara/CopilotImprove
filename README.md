@@ -1,7 +1,21 @@
-# CopilotImprove 
+# Copilot 改善アプリの概要
+
 Copilot Studio で作成したCopilot の生成型の回答の実行ログを収集して継続的な改善を行うためのアプリです。
 
 ![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/56bdc708-8014-42fe-8fdf-2b67b02a6ddb)
+
+Copilot for Microsoft 365 には対応しておりません。
+
+Copilot 改善アプリ(CopilotImprove)はあくまでもDataverse に保存されているCopilot の実行履歴をJSON形式から情報を抽出、さらにUnicodeエスケープシーケンスとなっていしまっている会話内容を読める形式に変換、表示し、さらに改善活動につなげていくワークベンチを実行するアプリです。
+
+参考までに、標準で会話履歴が表示されている`ConversationTranscript` テーブルには以下のように複雑に会話履歴が保存されております。
+
+![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/795f1184-9278-4e09-870e-94bcf24d897d)
+
+これを利用しやすくしたい、ということで開発を思いつきました。
+
+> [!Note]
+> 動いたよ、できたよという結果は是非、 [ギークフジワラのXアカウント](https://x.com/Geekfujiwara) までメンションしてご報告ください！！
 
 標準のレポートではCopilot 毎の情報は提供してくれますが、こちらのアプリは環境毎のCopilot の情報を提供してくれます。
 
@@ -12,8 +26,12 @@ Copilot の実際の改善活動を行うチームは、環境ごとに配置さ
 > [!Note]
 > テナント全体ではCoE Starter Kit による管理を想定しており、環境はこちらのアプリ、テナントはCoE Starter Kit という分担で考えております。
 
+# Copilot 改善アプリの利用イメージ
 
 ## 各種レポート
+
+Copilot Studio で作成したCopilotの、環境内で生成型の回答(Generative Answers)を行った際、そしてその改善活動の各種レポートを確認することが出来ます。
+
 ![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/82af7d91-e515-40b7-8b83-4bc29d00a6f8)
 
 ![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/e101baf2-48f7-4116-a013-1246b8edd772)
@@ -27,6 +45,13 @@ Copilot の実際の改善活動を行うチームは、環境ごとに配置さ
 ## 利用イメージ
 
 改善対象のログに対して、バックグラウンドで連携されてきます。
+
+> [!Note]
+> Copilot を利用しているユーザーや管理者はデータの収集に関して特に何もする必要がありません。
+>
+> 一度、このアプリを環境にインポートしたら自動的に収集されるようになります。
+>
+> ただし、データ収集まで1時間ほどのタイムラグがあります。
 
 ![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/5f19e192-9b4a-4954-a6c9-1dc4697d5043)
 
@@ -65,4 +90,37 @@ Copilot Studio 側でコンテンツ モデレーションによってフィル�
 データソースに関連性が高い情報がなかったときには「検索結果なし」として返ってきます。
 
 ![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/b37278e0-bce8-4bea-8b67-399cc14e2723)
+
+## Power Automate で行っている処理
+
+Power Automate クラウドフローにて各種変換、Dataverse カスタムテーブルである`Copilot 改善` テーブルへ格納処理を行っています。
+
+`ConversationTranscript` テーブルにデータが作成されると、フローが起動します。そして、生成AIでの処理が行われると`GenerativeAnswersSupportData`に関する`Activity`が発生しますのでヲの情報を見を抽出しています。値がないときは`Copilot 改善`テーブルへの値の保存は実行されません。
+
+![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/d0638f2b-85af-4a4e-9a3f-5e4b4eb6f747)
+
+
+# 環境へのインストール
+
+## 前提条件
+
+以下のライセンスが必要です。
+
+* Copilot Studio
+* Power Apps Premium またはPower Apps per app
+
+## ソリューションのインポート
+
+ソリューションは[リリース](https://github.com/geekfujiwara/CopilotImprove/releases)に提供されています。不定期でアップデートします。最新のリリースを利用するようにしてください。
+
+> [!Note]
+> アップデート情報は [ギークフジワラのXアカウント](https://x.com/Geekfujiwara) でご案内します。
+>
+> フォローしてお待ち下さい。
+
+ソリューションをダウンロードして、Zip形式のままインポートを行います。
+
+ウイザードに則って行えば問題なくインポートができるはずです。ご不明な方はインポート方法は以下を参考にしてください。
+
+[Power Appsのソリューションのインポート](https://learn.microsoft.com/ja-jp/power-apps/maker/data-platform/import-update-export-solutions)
 
