@@ -1,7 +1,7 @@
 # CopilotImprove 
 Copilot Studio で作成したCopilot の生成型の回答の実行ログを収集して継続的な改善を行うためのアプリです。
 
-![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/a2063e1e-fcde-4b70-a2d2-2e1b0060d96f)
+![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/56bdc708-8014-42fe-8fdf-2b67b02a6ddb)
 
 標準のレポートではCopilot 毎の情報は提供してくれますが、こちらのアプリは環境毎のCopilot の情報を提供してくれます。
 
@@ -9,7 +9,7 @@ Copilot の実際の改善活動を行うチームは、環境ごとに配置さ
 
 例えば、環境が会社毎などで分けれれている場合、その会社ごとでCopilot の改善活動を行っていくのではないか、として想定しています。
 
-> [!ポイント]
+> [!Note]
 > テナント全体ではCoE Starter Kit による管理を想定しており、環境はこちらのアプリ、テナントはCoE Starter Kit という分担で考えております。
 
 
