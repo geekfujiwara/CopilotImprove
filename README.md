@@ -120,6 +120,8 @@ Power Automate クラウドフローにて各種変換、Dataverse カスタム�
 
 ソリューションをダウンロードして、Zip形式のままインポートを行います。
 
+インポート後、カスタマイズをすべて公開し、クラウドフローがオフになっている場合オン(有効)にしてください。
+
 ウイザードに則って行えば問題なくインポートができるはずです。ご不明な方はインポート方法は以下を参考にしてください。
 
 [Power Appsのソリューションのインポート](https://learn.microsoft.com/ja-jp/power-apps/maker/data-platform/import-update-export-solutions)
