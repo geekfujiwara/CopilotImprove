@@ -100,7 +100,7 @@ Copilot Studio 側でコンテンツ モデレーションによってフィル�
 
 Power Automate クラウドフローにて各種変換、Dataverse カスタムテーブルである`Copilot 改善` テーブルへ格納処理を行っています。
 
-`ConversationTranscript` テーブルにデータが作成されると、フローが起動します。そして、生成AIでの処理が行われると`GenerativeAnswersSupportData`に関する`Activity`が発生しますのでヲの情報を見を抽出しています。値がないときは`Copilot 改善`テーブルへの値の保存は実行されません。
+`ConversationTranscript` テーブルにデータが作成されると、フローが起動します。そして、生成AIでの処理が行われると`GenerativeAnswersSupportData`に関する`Activity`が発生します。これを変換後格納しています。値がないときは`Copilot 改善`テーブルへの値の保存は実行されません。
 
 ![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/d0638f2b-85af-4a4e-9a3f-5e4b4eb6f747)
 
