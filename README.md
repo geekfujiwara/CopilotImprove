@@ -15,7 +15,7 @@ Copilot 改善アプリ(CopilotImprove)はあくまでもDataverse に保存さ�
 これを利用しやすくしたい、ということで開発を思いつきました。
 
 > [!Note]
-> 動いたよ、できたよという結果は是非、 [ギークフジワラのXアカウント]([https://x.com/Geekfujiwara](https://x.com/geekfujiwara/status/1816394470998626456)) までメンションしてご報告ください！！
+> 動いたよ、できたよという結果は是非、 [ギークフジワラのXアカウント]([https://x.com/Geekfujiwara](https://x.com/geekfujiwara/)) までメンションしてご報告ください！！
 
 標準のレポートではCopilot 毎の情報は提供してくれますが、こちらのアプリは環境毎のCopilot の情報を提供してくれます。
 
