@@ -4,7 +4,8 @@ Copilot Studio で作成したCopilot の生成型の回答の実行ログを収
 
 ![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/56bdc708-8014-42fe-8fdf-2b67b02a6ddb)
 
-Copilot for Microsoft 365 には対応しておりません。
+> [!Note]
+> Microsoft 365 Copilot はアーキテクチャが異なるため対応しておりません。対応しているのはCopilot Studio で作成したCopilot です。
 
 Copilot 改善アプリ(CopilotImprove)はあくまでもDataverse に保存されているCopilot の実行履歴をJSON形式から情報を抽出、さらにUnicodeエスケープシーケンスとなっていしまっている会話内容を読める形式に変換、表示し、さらに改善活動につなげていくワークベンチを実行するアプリです。
 
@@ -46,6 +47,9 @@ Copilot Studio で作成したCopilotの、環境内で生成型の回答(Genera
 ![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/0e685a51-b3fb-4b44-8c52-e74d163bfb36)
 
 ![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/8dfd2f41-cfe8-4550-9ff3-4f5157b7ef1a)
+
+![image](https://github.com/user-attachments/assets/25e9ec56-ea7e-40b2-ac3f-497e171380a4)
+
 
 ## 利用イメージ
 
@@ -103,6 +107,41 @@ Power Automate クラウドフローにて各種変換、Dataverse カスタム�
 `ConversationTranscript` テーブルにデータが作成されると、フローが起動します。そして、生成AIでの処理が行われると`GenerativeAnswersSupportData`に関する`Activity`が発生します。これを変換後格納しています。値がないときは`Copilot 改善`テーブルへの値の保存は実行されません。
 
 ![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/d0638f2b-85af-4a4e-9a3f-5e4b4eb6f747)
+
+
+## CSAT 評価
+CSAT 評価とは顧客満足度評価です。Copilot Studio においては、満足度のアンケートを星の5段階評価で評価することができます。
+
+![image](https://github.com/user-attachments/assets/ab60f2a1-464a-485d-a86a-673e9d0f491f)
+
+会話の終了トピックにつなげることでCSAT 評価をユーザーに送信することができます。
+
+![image](https://github.com/user-attachments/assets/a3177928-01e9-40af-a5d9-d61bd7500ac9)
+
+
+Copilot 改善アプリでは、その回答結果についてもデータを連携します。
+
+データを一覧で確認する機能として、以下の機能が用意されています。
+
+* CSAT ビュー
+* フォームでのCSAT 項目
+* CSAT グラフ
+
+ビューをCSATに変更することができます。ユーザーからGenerative Answers の回答があったセッション中にCSAT 評価を送信すると、その回答への評価として同時に評価の値を連携します。
+
+![image](https://github.com/user-attachments/assets/45e102f4-9dcb-4f52-b4d4-f8e5194ccd71)
+
+フォームでは以下の部分にてCSAT 評価が確認できます。
+
+![image](https://github.com/user-attachments/assets/33c0422c-a688-4df6-87be-e193a7eb9c07)
+
+グラフは上位5件のCopilot を表示します。
+
+![image](https://github.com/user-attachments/assets/25262e2f-eb43-47d2-a21c-d2274201f35e)
+
+
+> [!Note]
+Copilot の名称で一致させています。名称が同じCopilot ではCSAT 評価が平均されてしまいます。
 
 
 # 環境へのインストール
