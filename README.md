@@ -7,9 +7,9 @@ Copilot Studio で作成したCopilot の生成型の回答の実行ログを収
 > [!Note]
 > Microsoft 365 Copilot はアーキテクチャが異なるため対応しておりません。対応しているのはCopilot Studio で作成したCopilot です。
 
-Copilot 改善アプリ(CopilotImprove)はあくまでもDataverse に保存されているCopilot の実行履歴をJSON形式から情報を抽出、さらにUnicodeエスケープシーケンスとなっていしまっている会話内容を読める形式に変換、表示し、さらに改善活動につなげていくワークベンチを実行するアプリです。
+Copilot 改善アプリ(CopilotImprove)はあくまでもDataverse に保存されているCopilot の実行履歴をJSON形式から情報を抽出、さらにUnicodeエスケープシーケンスとなってしまっている会話内容を読める形式に変換、可視化し、さらに改善活動につなげていくワークベンチを実行するアプリです。
 
-参考までに、標準で会話履歴が表示されている`ConversationTranscript` テーブルには以下のように複雑に会話履歴が保存されております。
+参考までに、標準で会話履歴が表示されている`ConversationTranscript` テーブルには以下のように複雑に、かつ日本語部分はUnicode エスケープシーケンス形式に会話履歴が保存されております。
 
 ![image](https://github.com/geekfujiwara/CopilotImprove/assets/96101315/795f1184-9278-4e09-870e-94bcf24d897d)
 
@@ -22,10 +22,10 @@ Copilot 改善アプリ(CopilotImprove)はあくまでもDataverse に保存さ�
 
 Copilot の実際の改善活動を行うチームは、環境ごとに配置されている想定で作成しています。
 
-例えば、環境が会社毎などで分けれれている場合、その会社ごとでCopilot の改善活動を行っていくのではないか、として想定しています。
+例えば、環境が会社毎などで分かれている場合、その会社ごとでCopilot の改善活動を行っていくのではないか、と想定して開発して環境全体のCopilot の実行ログを集めるようにしています。
 
 > [!Note]
-> テナント全体ではCoE Starter Kit による管理を想定しており、環境はこちらのアプリ、テナントはCoE Starter Kit という分担で考えております。
+> ガバナンスはCoE Starter Kit による管理を想定しております。活用促進や改善はこちらのアプリという分担で考えております。
 
 ## 動画
 1分程度で実際の改善の流れを紹介してみました。
