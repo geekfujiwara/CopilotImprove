@@ -166,6 +166,11 @@ Copilot の名称で一致させています。名称が同じCopilot ではCSAT
 
 インポート後、カスタマイズをすべて公開し、クラウドフローがオフになっている場合オン(有効)にしてください。
 
+
+## 補足
+Conversation Transcript テーブル内データは[デフォルトで30日間後にデータ削除](https://learn.microsoft.com/ja-jp/microsoft-copilot-studio/analytics-transcripts-powerapps#change-the-default-retention-period)されます。こちらのツールでデータを連携した先のデータは保持されます。
+
+
 ウイザードに則って行えば問題なくインポートができるはずです。ご不明な方はインポート方法は以下を参考にしてください。
 
 [Power Appsのソリューションのインポート](https://learn.microsoft.com/ja-jp/power-apps/maker/data-platform/import-update-export-solutions)
